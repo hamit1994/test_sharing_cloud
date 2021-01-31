@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.1 on win32)" generated="20210131 22:01:22.781" rpa="false">
+<suite id="s1" name="SharingCloud" source="C:\Users\MOUSSA HAMIT\eclipse-workspace\SharingCloud">
+<suite id="s1-s1" name="Tests" source="C:\Users\MOUSSA HAMIT\eclipse-workspace\SharingCloud\tests">
+<suite id="s1-s1-s1" name="Test" source="C:\Users\MOUSSA HAMIT\eclipse-workspace\SharingCloud\tests\test.robot">
+<test id="s1-s1-s1-t1" name="LoginTest user1">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.saucedemo.com/index.html</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210131 22:01:23.284" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/index.html'.</msg>
+<status status="PASS" starttime="20210131 22:01:23.284" endtime="20210131 22:01:28.703"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user-name</arg>
+<arg>standard_user</arg>
+</arguments>
+<msg timestamp="20210131 22:01:28.705" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210131 22:01:28.704" endtime="20210131 22:01:28.824"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>secret_sauce</arg>
+</arguments>
+<msg timestamp="20210131 22:01:28.825" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210131 22:01:28.863" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210131 22:01:28.921" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210131 22:01:28.824" endtime="20210131 22:01:28.921"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=login-button</arg>
+</arguments>
+<msg timestamp="20210131 22:01:28.922" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210131 22:01:28.922" endtime="20210131 22:01:29.704"></status>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${var}</var>
+</assign>
+<msg timestamp="20210131 22:01:29.711" level="INFO">${var} = https://www.saucedemo.com/inventory.html</msg>
+<status status="PASS" starttime="20210131 22:01:29.705" endtime="20210131 22:01:29.712"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"""${var}"""=="""https://www.saucedemo.com/inventory.html"""</arg>
+<arg>Test Keyword 3</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 4</arg>
+</arguments>
+<kw name="Test Keyword 3">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connexion reussie</arg>
+</arguments>
+<status status="PASS" starttime="20210131 22:01:29.715" endtime="20210131 22:01:29.715"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.714" endtime="20210131 22:01:29.715"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.712" endtime="20210131 22:01:29.716"></status>
+</kw>
+<doc>This is login test</doc>
+<status status="PASS" starttime="20210131 22:01:23.283" endtime="20210131 22:01:29.716" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="Add products to cart for user1">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@class="inventory_list"]/div</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20210131 22:01:29.728" level="INFO">${items} = 6</msg>
+<status status="PASS" starttime="20210131 22:01:29.717" endtime="20210131 22:01:29.729"></status>
+</kw>
+<kw name="${cpt} IN RANGE [ ${items} ]" type="for">
+<kw name="${cpt} = 0" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:29.730" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:29.729" endtime="20210131 22:01:29.790"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.729" endtime="20210131 22:01:29.790"></status>
+</kw>
+<kw name="${cpt} = 1" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:29.791" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:29.791" endtime="20210131 22:01:29.845"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.790" endtime="20210131 22:01:29.845"></status>
+</kw>
+<kw name="${cpt} = 2" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:29.846" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:29.845" endtime="20210131 22:01:29.898"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.845" endtime="20210131 22:01:29.898"></status>
+</kw>
+<kw name="${cpt} = 3" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:29.899" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:29.898" endtime="20210131 22:01:29.961"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.898" endtime="20210131 22:01:29.961"></status>
+</kw>
+<kw name="${cpt} = 4" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:29.962" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:29.961" endtime="20210131 22:01:30.019"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.961" endtime="20210131 22:01:30.019"></status>
+</kw>
+<kw name="${cpt} = 5" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:30.020" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:30.020" endtime="20210131 22:01:30.072"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:30.020" endtime="20210131 22:01:30.072"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.729" endtime="20210131 22:01:30.072"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:29.716" endtime="20210131 22:01:30.072" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t3" name="Acces au panier user1">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="shopping_cart_container"]/a/span</arg>
+</arguments>
+<msg timestamp="20210131 22:01:30.074" level="INFO">Clicking element 'xpath://*[@id="shopping_cart_container"]/a/span'.</msg>
+<status status="PASS" starttime="20210131 22:01:30.073" endtime="20210131 22:01:30.228"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:30.073" endtime="20210131 22:01:30.229" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t4" name="Verification panier user1">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="shopping_cart_container"]/a/span</arg>
+</arguments>
+<assign>
+<var>${nb_pdt}</var>
+</assign>
+<msg timestamp="20210131 22:01:30.265" level="INFO">${nb_pdt} = 6</msg>
+<status status="PASS" starttime="20210131 22:01:30.232" endtime="20210131 22:01:30.266"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${nb_pdt}==6</arg>
+<arg>Test Keyword 1</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 2</arg>
+</arguments>
+<kw name="Test Keyword 1">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Verification Valide</arg>
+</arguments>
+<status status="PASS" starttime="20210131 22:01:30.268" endtime="20210131 22:01:30.269"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:30.267" endtime="20210131 22:01:30.271"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:30.266" endtime="20210131 22:01:30.271"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:30.231" endtime="20210131 22:01:30.271" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t5" name="LoginTest user2">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.saucedemo.com/index.html</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210131 22:01:30.273" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/index.html'.</msg>
+<status status="PASS" starttime="20210131 22:01:30.273" endtime="20210131 22:01:34.156"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user-name</arg>
+<arg>locked_out_user</arg>
+</arguments>
+<msg timestamp="20210131 22:01:34.157" level="INFO">Typing text 'locked_out_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210131 22:01:34.157" endtime="20210131 22:01:34.279"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>secret_sauce</arg>
+</arguments>
+<msg timestamp="20210131 22:01:34.280" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210131 22:01:34.319" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210131 22:01:34.379" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210131 22:01:34.280" endtime="20210131 22:01:34.379"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=login-button</arg>
+</arguments>
+<msg timestamp="20210131 22:01:34.380" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210131 22:01:34.379" endtime="20210131 22:01:34.444"></status>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${var}</var>
+</assign>
+<msg timestamp="20210131 22:01:34.451" level="INFO">${var} = https://www.saucedemo.com/index.html</msg>
+<status status="PASS" starttime="20210131 22:01:34.445" endtime="20210131 22:01:34.452"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"""${var}"""=="""https://www.saucedemo.com/inventory.html"""</arg>
+<arg>Test Keyword 3</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 4</arg>
+</arguments>
+<kw name="Test Keyword 4">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connexion non reussie Donc Pas de suite</arg>
+</arguments>
+<status status="PASS" starttime="20210131 22:01:34.455" endtime="20210131 22:01:34.455"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:34.454" endtime="20210131 22:01:34.455"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:34.452" endtime="20210131 22:01:34.456"></status>
+</kw>
+<doc>This is login test</doc>
+<status status="PASS" starttime="20210131 22:01:30.272" endtime="20210131 22:01:34.456" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t6" name="LoginTest user3">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.saucedemo.com/index.html</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210131 22:01:34.458" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/index.html'.</msg>
+<status status="PASS" starttime="20210131 22:01:34.457" endtime="20210131 22:01:38.425"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user-name</arg>
+<arg>problem_user</arg>
+</arguments>
+<msg timestamp="20210131 22:01:38.427" level="INFO">Typing text 'problem_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210131 22:01:38.426" endtime="20210131 22:01:38.545"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>secret_sauce</arg>
+</arguments>
+<msg timestamp="20210131 22:01:38.546" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210131 22:01:38.585" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210131 22:01:38.644" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210131 22:01:38.546" endtime="20210131 22:01:38.644"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=login-button</arg>
+</arguments>
+<msg timestamp="20210131 22:01:38.645" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210131 22:01:38.644" endtime="20210131 22:01:39.136"></status>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${var}</var>
+</assign>
+<msg timestamp="20210131 22:01:39.146" level="INFO">${var} = https://www.saucedemo.com/inventory.html</msg>
+<status status="PASS" starttime="20210131 22:01:39.137" endtime="20210131 22:01:39.146"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"""${var}"""=="""https://www.saucedemo.com/inventory.html"""</arg>
+<arg>Test Keyword 3</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 4</arg>
+</arguments>
+<kw name="Test Keyword 3">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connexion reussie</arg>
+</arguments>
+<status status="PASS" starttime="20210131 22:01:39.147" endtime="20210131 22:01:39.147"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.147" endtime="20210131 22:01:39.148"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.146" endtime="20210131 22:01:39.148"></status>
+</kw>
+<doc>This is login test</doc>
+<status status="PASS" starttime="20210131 22:01:34.457" endtime="20210131 22:01:39.148" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t7" name="Add products to cart for user3">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@class="inventory_list"]/div</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20210131 22:01:39.165" level="INFO">${items} = 6</msg>
+<status status="PASS" starttime="20210131 22:01:39.149" endtime="20210131 22:01:39.165"></status>
+</kw>
+<kw name="${cpt} IN RANGE [ ${items} ]" type="for">
+<kw name="${cpt} = 0" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.167" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.167" endtime="20210131 22:01:39.230"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.166" endtime="20210131 22:01:39.230"></status>
+</kw>
+<kw name="${cpt} = 1" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.231" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.231" endtime="20210131 22:01:39.288"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.230" endtime="20210131 22:01:39.289"></status>
+</kw>
+<kw name="${cpt} = 2" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.290" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.289" endtime="20210131 22:01:39.340"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.289" endtime="20210131 22:01:39.341"></status>
+</kw>
+<kw name="${cpt} = 3" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.342" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.341" endtime="20210131 22:01:39.379"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.341" endtime="20210131 22:01:39.379"></status>
+</kw>
+<kw name="${cpt} = 4" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.380" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.380" endtime="20210131 22:01:39.417"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.380" endtime="20210131 22:01:39.418"></status>
+</kw>
+<kw name="${cpt} = 5" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.418" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.418" endtime="20210131 22:01:39.456"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.418" endtime="20210131 22:01:39.456"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.166" endtime="20210131 22:01:39.456"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.149" endtime="20210131 22:01:39.457" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t8" name="Acces au panier user3">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="shopping_cart_container"]/a/span</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.458" level="INFO">Clicking element 'xpath://*[@id="shopping_cart_container"]/a/span'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.458" endtime="20210131 22:01:39.597"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.457" endtime="20210131 22:01:39.597" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t9" name="Verification panier user3">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="shopping_cart_container"]/a/span</arg>
+</arguments>
+<assign>
+<var>${nb_pdt}</var>
+</assign>
+<msg timestamp="20210131 22:01:39.632" level="INFO">${nb_pdt} = 2</msg>
+<status status="PASS" starttime="20210131 22:01:39.601" endtime="20210131 22:01:39.632"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${nb_pdt}==6</arg>
+<arg>Test Keyword 1</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 2</arg>
+</arguments>
+<kw name="Test Keyword 2">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Verification Non Valide---Pas tous</arg>
+</arguments>
+<status status="PASS" starttime="20210131 22:01:39.634" endtime="20210131 22:01:39.634"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.634" endtime="20210131 22:01:39.635"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.633" endtime="20210131 22:01:39.635"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:39.599" endtime="20210131 22:01:39.635" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t10" name="LoginTest user4">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.saucedemo.com/index.html</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210131 22:01:39.637" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/index.html'.</msg>
+<status status="PASS" starttime="20210131 22:01:39.637" endtime="20210131 22:01:45.137"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user-name</arg>
+<arg>performance_glitch_user</arg>
+</arguments>
+<msg timestamp="20210131 22:01:45.141" level="INFO">Typing text 'performance_glitch_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20210131 22:01:45.138" endtime="20210131 22:01:45.285"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>secret_sauce</arg>
+</arguments>
+<msg timestamp="20210131 22:01:45.286" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210131 22:01:45.328" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210131 22:01:45.388" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210131 22:01:45.286" endtime="20210131 22:01:45.388"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=login-button</arg>
+</arguments>
+<msg timestamp="20210131 22:01:45.389" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20210131 22:01:45.389" endtime="20210131 22:01:51.486"></status>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${var}</var>
+</assign>
+<msg timestamp="20210131 22:01:51.494" level="INFO">${var} = https://www.saucedemo.com/inventory.html</msg>
+<status status="PASS" starttime="20210131 22:01:51.486" endtime="20210131 22:01:51.494"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"""${var}"""=="""https://www.saucedemo.com/inventory.html"""</arg>
+<arg>Test Keyword 3</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 4</arg>
+</arguments>
+<kw name="Test Keyword 3">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connexion reussie</arg>
+</arguments>
+<status status="PASS" starttime="20210131 22:01:51.495" endtime="20210131 22:01:51.495"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.494" endtime="20210131 22:01:51.495"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.494" endtime="20210131 22:01:51.496"></status>
+</kw>
+<doc>This is login test</doc>
+<status status="PASS" starttime="20210131 22:01:39.636" endtime="20210131 22:01:51.496" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t11" name="Add products to cart for user4">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@class="inventory_list"]/div</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20210131 22:01:51.511" level="INFO">${items} = 6</msg>
+<status status="PASS" starttime="20210131 22:01:51.497" endtime="20210131 22:01:51.511"></status>
+</kw>
+<kw name="${cpt} IN RANGE [ ${items} ]" type="for">
+<kw name="${cpt} = 0" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:51.512" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:51.511" endtime="20210131 22:01:51.575"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.511" endtime="20210131 22:01:51.575"></status>
+</kw>
+<kw name="${cpt} = 1" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:51.576" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:51.576" endtime="20210131 22:01:51.649"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.576" endtime="20210131 22:01:51.649"></status>
+</kw>
+<kw name="${cpt} = 2" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:51.650" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:51.650" endtime="20210131 22:01:51.699"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.650" endtime="20210131 22:01:51.700"></status>
+</kw>
+<kw name="${cpt} = 3" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:51.700" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:51.700" endtime="20210131 22:01:51.763"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.700" endtime="20210131 22:01:51.763"></status>
+</kw>
+<kw name="${cpt} = 4" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:51.765" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:51.764" endtime="20210131 22:01:51.839"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.764" endtime="20210131 22:01:51.839"></status>
+</kw>
+<kw name="${cpt} = 5" type="foritem">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20210131 22:01:51.840" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20210131 22:01:51.840" endtime="20210131 22:01:51.895"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.840" endtime="20210131 22:01:51.895"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.511" endtime="20210131 22:01:51.895"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.496" endtime="20210131 22:01:51.896" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t12" name="Acces au panier user4">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="shopping_cart_container"]/a/span</arg>
+</arguments>
+<msg timestamp="20210131 22:01:51.900" level="INFO">Clicking element 'xpath://*[@id="shopping_cart_container"]/a/span'.</msg>
+<status status="PASS" starttime="20210131 22:01:51.899" endtime="20210131 22:01:52.127"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:51.897" endtime="20210131 22:01:52.127" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t13" name="Verification panier user4">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="shopping_cart_container"]/a/span</arg>
+</arguments>
+<assign>
+<var>${nb_pdt}</var>
+</assign>
+<msg timestamp="20210131 22:01:52.159" level="INFO">${nb_pdt} = 6</msg>
+<status status="PASS" starttime="20210131 22:01:52.128" endtime="20210131 22:01:52.159"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${nb_pdt}==6</arg>
+<arg>Test Keyword 1</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 2</arg>
+</arguments>
+<kw name="Test Keyword 1">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Verification Valide</arg>
+</arguments>
+<status status="PASS" starttime="20210131 22:01:52.162" endtime="20210131 22:01:52.162"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:52.161" endtime="20210131 22:01:52.163"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:52.159" endtime="20210131 22:01:52.163"></status>
+</kw>
+<status status="PASS" starttime="20210131 22:01:52.128" endtime="20210131 22:01:52.163" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210131 22:01:23.074" endtime="20210131 22:01:52.164"></status>
+</suite>
+<status status="PASS" starttime="20210131 22:01:23.071" endtime="20210131 22:01:52.170"></status>
+</suite>
+<status status="PASS" starttime="20210131 22:01:23.046" endtime="20210131 22:01:52.175"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="13" fail="0">Critical Tests</stat>
+<stat pass="13" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="13" fail="0" id="s1" name="SharingCloud">SharingCloud</stat>
+<stat pass="13" fail="0" id="s1-s1" name="Tests">SharingCloud.Tests</stat>
+<stat pass="13" fail="0" id="s1-s1-s1" name="Test">SharingCloud.Tests.Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
